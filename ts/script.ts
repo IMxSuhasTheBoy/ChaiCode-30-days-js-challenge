@@ -87,4 +87,121 @@ const intersection1: testType2_intersection0 = {
   standard: 67, //!
 };
 
-// type aliases........
+//* primitive type aliases-------------------------
+type TestTypeAliases0 = boolean;
+const exampleTypeAliases0: TestTypeAliases0 = true;
+
+type TestTypeAliasesUnion0 = string | number;
+const Age: TestTypeAliasesUnion0 = "34";
+
+//* object type aliases----------------------------
+type Person = {
+  username: string;
+  password: string;
+  birthDate: Date;
+  isAdmin: boolean;
+  isLoggedIn: boolean;
+};
+
+let PersonOne: Person = {
+  birthDate: new Date(),
+  isAdmin: false,
+  isLoggedIn: true,
+  password: "itsapassword",
+  username: "person_one",
+};
+
+//* Interface
+interface TestIUserSchema {
+  username: string;
+  password: string;
+  isAdmin: boolean;
+  lastLoggedIn: Date;
+}
+
+function testIUserSchema(user: TestIUserSchema) {
+  console.log(user);
+
+  // user.isAdmin =
+}
+
+// testIUserSchema({})
+
+// interface TestIUserSchema {
+//   fullName: string;
+// }
+///////////////////////////////////////////////////
+
+interface TestIJuiceSchema {
+  name: string;
+  price: number;
+}
+
+interface TestIFruitJuice extends TestIJuiceSchema {
+  fruitName: string;
+}
+interface TestIVeggieJuice extends TestIJuiceSchema {
+  veggieName: string;
+}
+
+function testGiveMeJuice(veggi: TestIVeggieJuice) {
+  // veggi.
+}
+
+// testGiveMeJuice({})
+
+/////////////////////////////////////////////////////
+// class (its a kind of blueprint)
+
+class Bag {
+  // properties
+  brand = "confidence";
+  varient = "grey";
+  capacity = 10;
+  isLightOn = false;
+  isBagLocked = false;
+
+  // methods
+  toggleLight() {
+    this.isLightOn = !this.isLightOn;
+    console.log(`light toggled ${this.isLightOn}`);
+  }
+
+  toggleLock(whosBag: string) {
+    this.isBagLocked = !this.isBagLocked; // this kw refers to the class property isBagLocked
+    console.log(`lock toggled ${this.isBagLocked} of ${whosBag}`);
+  }
+}
+
+// class instantiation (instance object)
+const suhasBag = new Bag();
+console.log(suhasBag);
+// suhasBag.toggleLock("suhas");
+// suhasBag.toggleLock("suhas");
+console.log(suhasBag);
+
+type Data = string | null;
+
+///////////////////////////////////////////////////////////////////
+class Ssd {
+  data: Data = null;
+
+  writeData(data: Data) {
+    if (data === null) {
+      throw new Error("data cannot be null");
+    }
+
+    console.log(`request received to store: ${data}`);
+    this.data = `|${data} : ${new Date().toLocaleString()}|`;
+    console.log(`data stored: ${this.data}`);
+  }
+
+  readData() {
+    console.log(`data read: ${this.data}`);
+  }
+}
+
+const ssd_One = new Ssd();
+ssd_One.writeData("content for _One");
+
+ssd_One.readData();
