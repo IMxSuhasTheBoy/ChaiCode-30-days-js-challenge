@@ -1,5 +1,5 @@
-//* 1. script that checks if a number is positive, negative or zero using if-else statements and logs the result.
-function checkNumber(num) {
+/** 1. script that checks if a number is positive, negative or zero using if-else statements and logs the result. */
+function checkNumber(num: number) {
   if (num > 0) {
     console.log(`${num} is a positive Number.`);
   } else if (num < 0) {
@@ -12,10 +12,11 @@ function checkNumber(num) {
 checkNumber(0); // neutral number
 checkNumber(5); // positive number
 checkNumber(-5); // negative number
+checkNumberSign(Math.floor(Math.random() * 21) - 10);
 
-//* 2. script to check if a person is eligible to vote based on their age and log the result.
+/** 2. script to check if a person is eligible to vote based on their age and log the result. */
 
-function checkEligibily(age) {
+function checkEligibily(age: number) {
   if (age >= 18) {
     console.log(`Eligible to vote.`);
   } else {
@@ -26,10 +27,10 @@ function checkEligibily(age) {
 checkEligibily(15); // Not eligible to vote.
 checkEligibily(20); // Eligible to vote.
 
-//* 3. script that uses a switch case to determine the day of the week based on a number (1-7) and logs the day name.
+/** 3. script that uses a switch case to determine the day of the week based on a number (1-7) and logs the day name. */
 
-function getDayOfTheWeek(dayNumber) {
-  let day;
+function getDayOfTheWeek(dayNumber: number) {
+  let day: string;
   switch (dayNumber) {
     case 1:
       day = "Sunday";
@@ -63,8 +64,8 @@ getDayOfTheWeek(8); // Invalid day
 
 //* 4. script that uses a switch case to assign a grade based on a score and logs the grade.
 
-function getGrade(score) {
-  let grade;
+function getGrade(score: number) {
+  let grade: string;
   switch (true) {
     case score > 100:
       grade = "Invalid score";
@@ -96,9 +97,9 @@ getGrade(50); // F
 getGrade(101); // Invalid score
 getGrade(0); // F
 
-//* 5. script to chack if a year is leap year using multiple conditions and log the result.
+/** 5. script to chack if a year is leap year using multiple conditions and log the result. */
 
-function isLeapYear(year) {
+function isLeapYear(year: number) {
   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
     console.log(`${year} is a leap year.`);
   } else {
