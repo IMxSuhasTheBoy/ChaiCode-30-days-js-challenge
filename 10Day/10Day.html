@@ -5,68 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>10Day</title>
     <style>
+      body {
+        background-color: rgb(210, 140, 49);
+        font-family: "Courier New", Courier, monospace;
+      }
       .hidden {
         display: none;
+      }
+      div {
+        text-align: center;
+        background-color: chocolate;
+        padding: 1rem 0;
+        margin: 1rem 0;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        background-color: gold;
+      }
+      #task01_para {
+        background-color: gold;
+      }
+
+      .task09_li {
+        margin: 1rem 0;
+        padding: 0.2rem 0;
+        border: 1px solid black;
+      }
+      .task10_li {
+        margin: 1rem 0;
+        padding: 0.2rem 0;
+        border: 1px solid black;
       }
     </style>
   </head>
   <body>
     <div>
       <!-- task 1 -->
-      <p id="task1Para">
-        task1Para this content is gona change on onclick event of below button
+      <button id="task01_btn">Change text</button>
+
+      <p id="task01_para">
+        this paragraphs content _will be_ dynamically changed (click event)
       </p>
-      <button onclick="task1()" id="task1Btn">Change text</button>
     </div>
 
     <!-- task 2 -->
-    <img id="task2Img"
-    src=https://img.freepik.com/free-vector/minimal-scandi-style-geometric-line-art-design_1048-20281.jpg?w=360&t=st=1721546680~exp=1721547280~hmac=f244e325eba743b88609996d4027768b27e127c2b8b8558ef033f38763edb522"
-    alt="pattern" width="180rem"/>
+    <div>
+      <p>double click on image to toggle opacity/visibility (click event)</p>
+      <img
+        id="task02_img"
+        src="dom_pattern.avif"
+        alt="pattern"
+        width="180rem"
+      />
+    </div>
 
     <!-- task 3 and 4 -->
-    <div id="task3and4Div">task3and4Div Hover to change color of this div</div>
+    <div id="task03_04_div">
+      task03_04_div Hover to change color of this div (mouse event)
+    </div>
 
     <!-- task 5 -->
-    <input type="text" id="task5Input" />
+    <div>
+      (keydown keyboard event) <br />
+      <input id="task05_input" type="text" />
+      <p>
+        Type any key in above input field <br />
+        and view its keycode and keyview:
+      </p>
+      <p id="task05_keyview_para"></p>
+    </div>
 
     <!-- task 6 -->
-    <p id="task6Para"></p>
+    <div>
+      (keyup keyboard event)
+      <p id="task06_para"></p>
+    </div>
 
     <!-- task 7 -->
-    <form id="task7Form" action="#">
-      <input type="text" required name="data" placeholder="Task 7 Enter data" />
-      <button type="submit">submit form</button>
-    </form>
+    <div>
+      form element
+      <form id="task07_form" action="#">
+        <div>
+          <label for="emailInput"> Email </label>
+          <input
+            id="emailInput"
+            type="text"
+            required
+            name="emailInput"
+            placeholder="Enter email"
+          />
+        </div>
+        <div>
+          <label for="passwordInput"> Password </label>
+          <input
+            type="password"
+            required
+            name="password"
+            id="passwordInput"
+            placeholder="Enter password"
+          />
+        </div>
+
+        <button type="submit">submit form</button>
+      </form>
+      <br />
+      form data logged to console window on submit
+    </div>
 
     <!-- task 8 -->
-    <p id="task8Para">choose option, value will be displayed in para</p>
-    <select name="alphabets" id="task8Select">
-      <option value="AB">AB</option>
-      <option value="CD">CD</option>
-      <option value="EF">EF</option>
-      <option value="GH">GH</option>
-    </select>
+    <div>
+      select option from dropdown
+      <p id="task08_para">No option selected</p>
+
+      <select name="options" id="task08_select">
+        <option value="first">First Option</option>
+        <option value="second">Second Option</option>
+        <option value="third">Third Option</option>
+        <option value="fourth">Fourth Option</option>
+      </select>
+    </div>
 
     <!-- task 9 -->
-    <p>Click on list item to see its value logging into console</p>
-    <ul id="task9List">
-      <li style="margin: 30px; border: 1px solid black">1</li>
-      <li style="margin: 30px; border: 1px solid black">2</li>
-      <li style="margin: 30px; border: 1px solid black">3</li>
-      <li style="margin: 30px; border: 1px solid black">4</li>
-    </ul>
+    <div>
+      <p>Click on list item to see its value logging into console</p>
+
+      <ul id="task09_ul">
+        <li class="task09_li">list item 1</li>
+        <li class="task09_li">list item 2</li>
+        <li class="task09_li">list item 3</li>
+        <li class="task09_li">list item 4</li>
+      </ul>
+    </div>
 
     <!-- task 10 -->
     <div>
       <ul id="task10List">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
+        <li title="task10_li" class="task10_li">1</li>
+        <li title="task10_li" class="task10_li">2</li>
+        <li title="task10_li" class="task10_li">3</li>
+        <li title="task10_li" class="task10_li">4</li>
       </ul>
       <button id="task10Btn">Add another list item</button>
     </div>
-    <script src="10Day.js"></script>
+    <script src="dist/10Day.js"></script>
   </body>
 </html>
