@@ -3,31 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>09Day</title>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+      #task01_h1 {
+        text-align: center;
+      }
+      .task08_font_large {
+        font-size: 3rem;
+      }
+      .task02_div {
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        align-content: center;
+        background-color: aqua;
+      }
+      #task04_ul {
+        display: flex;
+        flex-direction: column;
+        list-style: circle;
+        gap: 1rem;
+      }
+      div {
+        background: rgb(255, 119, 0);
+        padding: 1rem 0;
+      }
+      nav {
+        background-color: darkkhaki;
+        padding: 0.5rem 0;
+        margin: 1rem 0;
+      }
+      .child_div {
+        background: rgb(117, 195, 0);
+        margin: 0.2rem 0;
+        padding: 0.3rem 0;
+      }
+      #task07_img {
+        width: 150px;
+      }
+      .task08_class_color {
+        background-color: aqua;
+      }
+      .task08_class_font_large {
+        font-size: 4rem;
+      }
+
+      #task09_para {
+        text-align: center;
+        font-size: 1rem;
+        background-color: gold;
+        padding: 0.5rem;
+      }
+      #task09_btn {
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: gold;
+      }
+      #task10_div {
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <h1 id="h1Task1">09Day JS Challenge</h1>
-    <div class="divTask2 font-large">
-      <p>Javascript DOM manipulation Tasks/Activities</p>
-    </div>
-    <ul>
-      <li>First li element hardcoded</li>
-    </ul>
-    <button onclick="task9()">Magic</button>
-    <div id="divOfParagraphs" style="background-color: bisque">
-      <p>Activity 3</p>
+    <h1 id="task01_h1" class="task08_class_font_large">
+      |JavaScript Challenge by courses.chaicode.com|
+    </h1>
 
-      <p>.........................................</p>
-
-      <p>Task6 Removing this p element using js</p>
+    <div class="task02_div">
+      DOM Manipulation - (dynamically changed bg color)
     </div>
-    <button onclick="task7()">
-      <img id="task7"
+
+    <nav>
+      list element
+      <ul id="task04_ul">
+        <li>First li element - (hardcoded)</li>
+      </ul>
+    </nav>
+
+    <div id="task05_div">removing this hardcoded div element dynamically</div>
+
+    <!-- parent div -->
+    <div id="task06_div">
+      <!-- child divs -->
+      <div class="child_div">This div is child_div</div>
+      <div class="child_div">This div is child_div</div>
+      <div class="child_div">This div is child_div</div>
+      <div class="child_div">This child_div will be removed dynamically</div>
+    </div>
+
+    <button onclick="task07_click()">
+      <img id="task07_img"
       src=https://img.freepik.com/free-vector/minimal-scandi-style-geometric-line-art-design_1048-20281.jpg?w=360&t=st=1721546680~exp=1721547280~hmac=f244e325eba743b88609996d4027768b27e127c2b8b8558ef033f38763edb522"
-      alt="" />
+      alt="patternOrChai" />
     </button>
-    <footer>Task5 Removing this footer element using js</footer>
-    <script src="09Day.js"></script>
+
+    <button id="task09_btn" onclick="task09_click()">Change para text ↓</button>
+
+    <p id="task09_para">
+      paragraph element text content _will be_ changed by clicking button (click
+      event).
+    </p>
+
+    <div id="task10_div">Hover this div element (mouse event)</div>
+
+    <script src="dist/09Day.js"></script>
   </body>
 </html>
