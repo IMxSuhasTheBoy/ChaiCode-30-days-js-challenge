@@ -113,16 +113,30 @@ console.log(returnProduct(3, 6));
 //
 /** Activitiy 5: Enhanced Object Literals */
 // Task 8
-let sendOtp = {
-  username: "Alice",
-  otp: 1234,
-  sendOtp() {
-    return `Hey! For ${this.username} here's the otp: ${this.otp} to register*.`;
-  },
+
+const sendOtp = function () {
+  return `Hey! For ${this.username} here's the otp: ${this.otp} to register*.`;
 };
 
-console.log(sendOtp);
-console.log(sendOtp.sendOtp());
+interface SendOtpObj {
+  username: string;
+  otp: number;
+  sendOtp: () => string;
+}
+
+let sendOtpObj: SendOtpObj = {
+  username: "Alice",
+  otp: 1234,
+  sendOtp,
+};
+
+sendOtpObj["sendOtp"] = sendOtp;
+
+console.log(sendOtpObj);
+
+console.log(sendOtpObj["username"]);
+
+console.log(sendOtpObj["sendOtp"]());
 
 //
 //
@@ -136,9 +150,14 @@ console.log(sendOtp.sendOtp());
 const randomNum1ForProp = Math.floor(Math.random() * 10 + 1);
 const randomNum2ForProp = Math.floor(Math.random() * 100 + 1);
 
-const objWithComputedProps = {
-  randomNumProp1: randomNum1ForProp,
-  randomNumProp2: randomNum2ForProp,
-};
+const objWithComputedProps = {};
+
+objWithComputedProps["randomNumFunc1"] = randomNum1ForProp;
+objWithComputedProps["randomNumFunc2"] = randomNum2ForProp;
 
 console.log(objWithComputedProps);
+
+console.log(
+  objWithComputedProps["randomNumFunc1"] +
+    objWithComputedProps["randomNumFunc2"]
+);
